@@ -70,6 +70,25 @@ export const StyledFooter = styled.footer`
     }
 
     li {
+      position: relative;
+      :hover {
+        a {
+          ::after {
+            content: "";
+            width: 0;
+            height: 0.2rem;
+            background: linear-gradient(to right, #5a77ff, #bc7198, #ffc593);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            z-index: 100;
+          }
+
+          :hover::after {
+            width: 100%;
+          }
+        }
+      }
       @media screen and (max-width: 600px) {
         padding-bottom: 1.4rem;
       }
